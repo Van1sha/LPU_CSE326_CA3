@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Title and it's style -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Care International</title>
+    <link rel="icon" type="image/x-icon" href="https://imgs.search.brave.com/mQsE3-GYv6gNa3t9Rt2JPv1OBopyvb8cv_e2GvAJO78/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vRUFFOEst/UUVwMG8vMS8wLzE2/MDB3L2NhbnZhLW1p/bmltYWxpc3QtbG9n/by1mb3ItaG9zcGl0/YWwtYW5kLW1lZGlj/YWwtaGVhbHRoLXFB/Yk1wcDBKQV9zLmpw/Zw">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <style>
+        /* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 2rem;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+/* Variables */
+:root {
+    --main-color: #ff7c03;
+    --main-light-color: #ff8b1f;
+    --container-color: #f8f7fc;
+    --text-color: #1a1d22;
+    --bg-color: #fff;
+    --box-color: #7676764f;
+}
+img{
+    width: 100%;
+    border-radius: 10%;
+}
+body{
+    color: var(--text-color)
+}
+section{
+    padding: 4rem 0 2rem;
+}
+.container{
+    max-width: 938px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header{
+    display: block;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #1a1d22;
+    /* background-color: #333333; */
+    text-align: center;
+    padding: 0px;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: auto;
+    margin: auto;
+}
+/* yaha hai  navbar ka logo ka css */
+.logo img{
+    width: 50px;
+    height: auto;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+.navbar{
+    display: flex;
+    column-gap: 2rem;
+}
+.navbar a{
+   position: relative;
+   color: var(--text-color);
+   font-size: 1rem;
+   font-weight: 500; 
+   color: white;
+}
+.nav-icons a:hover {
+    transform: translateY(-2px);
+    transition: 0.4s;
+}
+
+.navbar a:hover, 
+.navbar .active {
+    color: var(--main-color);
+}
+.nav-icons{
+    display: flex;
+    column-gap: 1rem;
+}
+.nav-icons .bx {
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+    color: white;
+}
+.nav-icons .bx:hover {
+    color: var(--main-color);
+}
+#menu-icon{
+    display: none;
+}
+.cart{
+    position: relative;
+}
+.cart span{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -10px;
+    right: -8px;
+    font-size: 0.6rem;
+    height: 15px;
+    width: 15px;
+    background: var(--main-color);
+    border-radius: 50%;
+    padding: 4px;
+    color: var(--bg-color);
+}
+/* Home */
+.home{
+    max-width: 1300px;
+    margin: auto;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    background: var(--container-color);
+}
+.home-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+}
+.home-text h1 {
+    font-size: 2.4rem;
+}
+.home-text p {
+    font-size: 0.938rem;
+    margin: 0.5rem 0 1.4rem;
+}
+
+
+
+
+
+.btn {
+    padding: 13px 26px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    font-weight: 400;
+    border-radius: 10px;
+}
+.btn:hover {
+  /* background: var(--main-light-color); */
+  transition: 1s;
+  border-radius: 50px;
+  background-color: #512da8;
+  color: white;
+  text-align: center;
+  margin: 2rem;
+  transition: all 0.8s ease;
+  
+}
+.heading {
+    text-align: center;
+    margin: 2rem;
+}
+.heading span {
+    border-bottom: 3px solid var(--main-color);
+}
+.featured-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+    gap: 1.5rem;
+}
+.featured-container .box{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px;
+    background-color: var(--container-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 1px 2px 4px rgb(15 54 55 / 10%);
+}
+.featured-container .box img {
+    width: 180px;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+
+.featured-container .box img:hover {
+    /* transform: scale(1.1);
+    transition: 0.5s; */
+    transform: translateY(-4px);
+    transition: 0.4s;
+    /* background-color: var(--container-color); */
+
+}
+
+
+
+
+
+.featured-container .box:hover {
+    /* transform: translateY(-4px);
+    transition: 0.4s; */
+    transform: scale(1.02);
+    transition: 0.5s;
+    background-color: var(--box-color);
+}
+/* .home-img:hover {
+    transform: scale(1.1);
+    transition: 0.5s; 
+} */
+.featured-container .box .text h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.featured-container .box .text a {
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+.shop-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
+    gap: 2rem;
+}
+.shop-container .box {
+    position: relative;
+    padding: 10px;
+    border-radius: 0.5rem;
+    box-shadow: 1px 2px 4px rgb(15 54 55 / 10%);
+}
+/* ismai border radius bad wali sari images ka hai ise 10rem bhi kar skte h */
+.shop-container .box img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    object-position: center;
+    background: var(--container-color);
+    border-radius: 0.5rem;
+}
+
+
+
+.shop-container .box img:hover {
+    transform: scale(1.05);
+    transition: 0.5s;
+    background: var(--main-light-color);
+
+}
+
+.shop-container .box h2 {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+.shop-container .box span{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.shop-container .box .bx {
+    position: absolute;
+    bottom: 1rem;
+    right: 0.8rem;
+    padding: 10px;
+    font-size: 20px;
+    background: var(--main-color);
+    color: var(--bg-color);
+    border-radius: 0.5rem;
+}
+
+
+
+.shop-container .box:hover{
+    background: var(--main-light-color);
+    transform: translateY(-4px);
+    transition: 0.4s;
+}
+.newsletter{
+    display: grid;
+    justify-items: center;
+}
+.newsletter form{
+   margin-top: 2rem;
+   display: flex;
+   background: var(--container-color);
+   padding: 10px;
+   border-radius: 0.5rem; 
+}
+.newsletter form .email-box{
+    width: 250px;
+}
+.newsletter form input{
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+.newsletter form .btn{
+    background: var(--main-light-color);
+    color: var(--bg-color);
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.newsletter form .btn:hover {
+    background: var(--main-light-color);
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.footer .logo {
+    margin-bottom: 0rem;
+}
+.footer-box {
+    display: flex;
+    flex-direction: column;
+}
+.social {
+    display: flex;
+    align-items: center;
+}
+.social a {
+    font-size: 24px;
+    margin-right: 1rem;
+    color: var(--text-color);
+}
+.social a:hover {
+    transform: translateY(-4px);
+    transition: 0.4s;
+}
+.footer-box h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+.footer-box a,
+.footer-box p {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+.footer-box a:hover{
+    color: var(--main-color);
+}
+.copyright {
+    padding: 25px;
+    text-align: center;
+}
+.img {
+    align-items: center;
+    padding: auto;
+    margin: auto;
+}
+.ppp {
+    display: flex;
+    align-items: center;
+    padding: auto;
+    margin: auto;
+}
+
+    </style>
+</head>
+<body>
+
+    </div>
+
+
+    <!-- Header(navigation bar) and it's content -->
+    <header>
+        
+        <div class="nav container">
+            <a href="#" class="logo">
+                <img src="https://imgs.search.brave.com/mQsE3-GYv6gNa3t9Rt2JPv1OBopyvb8cv_e2GvAJO78/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vRUFFOEst/UUVwMG8vMS8wLzE2/MDB3L2NhbnZhLW1p/bmltYWxpc3QtbG9n/by1mb3ItaG9zcGl0/YWwtYW5kLW1lZGlj/YWwtaGVhbHRoLXFB/Yk1wcDBKQV9zLmpw/Zw" alt="">
+            </a>
+            
+            
+            <ul class="navbar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="https://www.nimh.nih.gov/health" target="_blank">Health Info</a></li>
+                <li><a href="#shop">Consultant</a></li>
+                <li><a href="https://www.therapistaid.com/therapy-worksheet/setting-life-goals" target="_blank">Set Goals</a></li>
+            </ul>
+            
+            <div class="nav-icons">
+                <a href="user.html" target="_blank" class="user"><i class='bx bxs-user'></i></a>
+            </div>
+        </div>
+    </header>
+
+
+
+    
+    <section class="home" id="home">
+       
+        <div class="home-container container">
+            <div class="home-text">
+                <h1>Modified Healthy life for you by<br>Health Care International</h1>
+                
+                <br>
+                <a href="signup.html" target="_blank" class="btn">Sign In</a>
+                <!-- <a href="" target="_blank" class="btn">Log In</a> -->
+            </div>
+
+
+
+            <!-- First mind exercising image -->
+            <div class="home-img">
+                <img src="https://spy.com/wp-content/uploads/2021/07/brain-exercise.png?w=958&h=599&crop=1" alt="#">
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Diagnostic analytics and report(specially edited don't chnage) -->
+    <section class="featured" id="featured">
+        
+        <div class="heading">
+            <h2><span>Find the good life by good health</span></h2>
+        </div>
+        <div class="featured-container container">
+            
+            <div class="box">
+               
+                <div class="text">
+                    <a href="https://www.hindawi.com/journals/sp/2020/2024160/" target="_blank"><img src="https://researchmethod.net/wp-content/uploads/2023/06/Diagnostic_Analytics-1024x576.jpg" alt="" class="ppp"></a>
+                    <br>
+                    <h2>User Diagnostic Analysis</h2>
+    
+                </div>
+            </div>
+
+
+
+            
+            <div class="box">
+                <div class="text">
+                    
+                <div">
+                    <a href="https://www.icanotes.com/wp-content/uploads/2020/11/Psychiatric%20Assessment%20Report%20Sample%20-%20Mental%20Health%20Evaluation%20Example.pdf" target="_blank">
+                    <img src="https://thumbs.dreamstime.com/b/beautiful-simple-illustration-diagnostic-report-icon-139738520.jpg" style="border-radius: 10px;" alt="" class="img"></a>
+                </div>
+                <br>
+                <h2>User Diagnostic Analysis Report</h2>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Good lifestyle offered -->
+    <section class="shop" id="shop">
+        <div class="heading">
+            <h2><span>A Good lifestyle Now</span></h2>
+        </div>
+        
+        <div class="shop-container container">
+            <div class="box">
+                <a href="https://familydoctor.org/talking-to-your-doctor-about-your-mental-health/" target="_blank">
+                <img src="https://thehealthcareinsights.com/wp-content/uploads/2021/02/Online-doctor-consultation.jpg" alt="">
+            </a>
+                <h2><center>Doctor's Advice</center></h2>
+                </div>
+
+            <div class="box">
+                <a href="https://pib.gov.in/newsite/PrintRelease.aspx?relid=112890" target="_blank">
+                <img src="https://cdn.dribbble.com/users/1961677/screenshots/16117089/hospital-animation.png" alt="">
+            </a>
+                <h2><center>Clinics</center></h2>
+            </div>
+
+            <div class="box">
+                <a href="https://newwatersrecovery.com/resource/common-psychiatric-lab-tests/" target="_blank
+                ">
+                <img src="https://img.freepik.com/premium-vector/brain-study-vector-illustration-man-woman-doctor-character-use-science-studying-human-head-organ-medicine-research-laboratory-concept-cartoon-medical-psychology-body-health_109722-3526.jpg" alt="">
+            </a>
+                <h2><center>Labs</center></h2>
+            </div>
+
+            <div class="box">
+                <a href="https://ayushnext.ayush.gov.in/detail/writeUps/what-is-a-healthy-lifestyle" target="_blank">
+                <img src="https://static.vecteezy.com/system/resources/previews/028/193/724/non_2x/healthy-lifestyle-illustration-with-organic-vegetables-or-fruit-sport-and-workout-in-flat-cartoon-hand-drawn-background-design-templates-vector.jpg" alt="">
+            </a>
+                <h2>Healthy Lifestyle</h2>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section class="new" id="new">
+        <div class="heading">
+            <h2><span>How To Live Healthy Lifestyle</span></h2>
+        </div>
+
+        <!-- Shop Content -->
+        <div class="shop-container container">
+            <div class="box">
+                <a href="https://www.nccih.nih.gov/health/yoga-what-you-need-to-know" target="_blank">
+                <img src="https://static.vecteezy.com/system/resources/previews/004/261/144/original/woman-meditating-in-nature-and-leaves-concept-illustration-for-yoga-meditation-relax-recreation-healthy-lifestyle-illustration-in-flat-cartoon-style-free-vector.jpg" alt="">
+            </a>
+                <br>
+                <h2><center>Yoga</center></h2>
+            </div>
+            
+            <div class="box">
+                <a href="https://www.nhs.uk/live-well/eat-well/how-to-eat-a-balanced-diet/eight-tips-for-healthy-eating/" target="_blank">
+                <img src="https://img.freepik.com/premium-vector/man-eating-fresh-healthy-fruits_61103-1402.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698105600&semt=ais" alt="">
+            </a>
+                <br>
+                <h2><center>Healthy Eating</center></h2>
+            </div>
+
+            <div class="box">
+                <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9367862/" target="_blank">
+                <img src="https://img.freepik.com/free-vector/people-caring-about-world-environment_53876-40263.jpg?size=626&ext=jpg&ga=GA1.1.386372595.1698192000&semt=ais" alt="">
+            </a>
+                <br>
+                <h2><center>Healthy Envirnoment</center></h2>
+            </div>
+    </section>
+    
+
+
+
+
+    
+    <section class="footer container">
+        <div class="footer-box">
+            
+            <a href="#" class="logo">
+                <img src="https://imgs.search.brave.com/mQsE3-GYv6gNa3t9Rt2JPv1OBopyvb8cv_e2GvAJO78/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tYXJr/ZXRwbGFjZS5jYW52/YS5jb20vRUFFOEst/UUVwMG8vMS8wLzE2/MDB3L2NhbnZhLW1p/bmltYWxpc3QtbG9n/by1mb3ItaG9zcGl0/YWwtYW5kLW1lZGlj/YWwtaGVhbHRoLXFB/Yk1wcDBKQV9zLmpw/Zw" alt="">
+            </a>
+            <div class="social">
+                <a href="https://www.facebook.com/" target="_blank"><i class='bx bxl-facebook' ></i></a>
+                <a href="https://twitter.com/?lang=en-in" target="_blank"><i class='bx bxl-twitter' ></i></a>
+                <a href="https://www.instagram.com/?hl=en" target="_blank"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://www.youtube.com/" target="_blank"><i class='bx bxl-youtube' ></i></a>
+            </div>
+        </div>
+        <div class="footer-box">
+            <h3>Pages</h3>
+            <a href="#home">Home</a>
+            <a href="#featured">Health Plans</a>
+            <a href="#shop">Consultant</a>
+            <a href="#new">Solutions</a>
+        </div>
+        <div class="footer-box">
+            <h3>Legal</h3>
+            <p>Privacy Policy</p>
+            <p>Refund Policy</p>
+            <p>Terms Of Use</p>
+           <p>Disclaimer</p>
+        </div>
+        <div class="footer-box">
+            <h3>Branches</h3>
+            <p>Delhi</p>
+            <p>Gujarat</p>
+            <p>Rajasthan</p>
+            <p>Uttar-Pradesh</p>
+        </div>
+    </section>
+    
+    <div class="copyright">
+        <p>&#169; Health Care International All Rights Reserved.</p>
+    </div>
+</body>
+</html>
